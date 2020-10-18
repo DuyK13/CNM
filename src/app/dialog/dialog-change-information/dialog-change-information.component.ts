@@ -1,3 +1,4 @@
+import { User } from './../../_interfaces/user';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { DialogChangePasswordComponent } from '../dialog-change-password/dialog-change-password.component';
@@ -10,7 +11,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class DialogChangeInformationComponent implements OnInit {
   userForm: FormGroup;
-  user: any;
+  user: User;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -44,7 +45,7 @@ export class DialogChangeInformationComponent implements OnInit {
       this.user.userName = result.userName;
       this.user.email = result.email;
       this.user.phone = result.phone;
-      this.user.date = new Date(day + '/' + month + '/' + year);
+      this.user.birthday = day + '/' + month + '/' + year;
 
       console.log(this.user);
     });
